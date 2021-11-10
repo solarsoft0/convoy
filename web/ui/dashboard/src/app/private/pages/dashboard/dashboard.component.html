@@ -51,20 +51,63 @@
 		<div class="dashboard--page--details">
 			<div class="card dashboard--page--details--chart">
 				<ul class="metrics">
-					<li class="messages">
+					<li>
 						<img src="/assets/img/message-icon.svg" alt="message icon" />
+						<img class="bg" src="/assets/img/message-icon.svg" alt="message icon" />
 						<div class="metric">
-							<div>{{ dashboardData.messages_sent }}</div>
+							<div>{{ dashboardData.messages_sent || 1 }}</div>
 							<div>Event Sent</div>
 						</div>
 					</li>
-					<li class="apps">
+					<li>
 						<img src="/assets/img/apps-icon.svg" alt="apps icon" />
+						<img class="bg" src="/assets/img/apps-icon.svg" alt="apps icon" />
 						<div class="metric">
 							<div>{{ dashboardData.apps }}</div>
 							<div>Apps</div>
 						</div>
 					</li>
+					<li>
+						<img src="/assets/img/enqueued-icon.svg" alt="enqueued icon" />
+						<img class="bg" src="/assets/img/enqueued-icon.svg" alt="enqueued icon" />
+						<div class="metric">
+							<div>0</div>
+							<div>Enqueued</div>
+						</div>
+					</li>
+					<li>
+						<img src="/assets/img/retry-icon-primary.svg" alt="retries icon" />
+						<img class="bg" src="/assets/img/retry-icon-primary.svg" alt="retries icon" />
+						<div class="metric">
+							<div>0</div>
+							<div>Retries</div>
+						</div>
+					</li>
+					<li>
+						<img src="/assets/img/processing-icon.svg" alt="processing icon" />
+						<img class="bg" src="/assets/img/processing-icon.svg" alt="processing icon" />
+						<div class="metric">
+							<div>0</div>
+							<div>Processing</div>
+						</div>
+					</li>
+					<li>
+						<img src="/assets/img/scheduled-icon.svg" alt="scheduled icon" />
+						<img class="bg" src="/assets/img/scheduled-icon.svg" alt="scheduled icon" />
+						<div class="metric">
+							<div>0</div>
+							<div>Scheduled</div>
+						</div>
+					</li>
+					<li>
+						<img src="/assets/img/failed-icon.svg" alt="failed icon" />
+						<img class="bg" src="/assets/img/failed-icon.svg" alt="failed icon" />
+						<div class="metric">
+							<div>0</div>
+							<div>Failed</div>
+						</div>
+					</li>
+					<li></li>
 				</ul>
 
 				<div>
