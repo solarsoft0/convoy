@@ -45,6 +45,10 @@ type RedisQueueConfiguration struct {
 	DSN string `json:"dsn" envconfig:"CONVOY_REDIS_DSN"`
 }
 
+type ConsulConfiguration struct {
+	DSN string `json:"dsn"`
+}
+
 type FileRealmOption struct {
 	Basic  []BasicAuth  `json:"basic" bson:"basic"`
 	APIKey []APIKeyAuth `json:"api_key"`
@@ -98,15 +102,17 @@ type GroupConfig struct {
 }
 
 type Configuration struct {
-	Auth            AuthConfiguration     `json:"auth,omitempty"`
-	Database        DatabaseConfiguration `json:"database"`
-	Sentry          SentryConfiguration   `json:"sentry"`
-	Queue           QueueConfiguration    `json:"queue"`
-	Server          ServerConfiguration   `json:"server"`
-	GroupConfig     GroupConfig           `json:"group"`
-	SMTP            SMTPConfiguration     `json:"smtp"`
-	Environment     string                `json:"env" envconfig:"CONVOY_ENV" required:"true" default:"development"`
-	MultipleTenants bool                  `json:"multiple_tenants"`
+	Auth              AuthConfiguration     `json:"auth,omitempty"`
+	UIAuthorizedUsers map[string]string     `json:"-"`
+	Database          DatabaseConfiguration `json:"database"`
+	Sentry            SentryConfiguration   `json:"sentry"`
+	Queue             QueueConfiguration    `json:"queue"`
+	Consul            ConsulConfiguration   `json:"consul"`
+	Server            ServerConfiguration   `json:"server"`
+	GroupConfig       GroupConfig           `json:"group"`
+	SMTP              SMTPConfiguration     `json:"smtp"`
+	Environment       string                `json:"env"`
+	MultipleTenants   bool                  `json:"multiple_tenants"`
 }
 
 type QueueProvider string
